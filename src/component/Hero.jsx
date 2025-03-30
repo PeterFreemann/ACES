@@ -12,9 +12,7 @@ export default function Hero() {
           <h1 className="md:text-[145px] text-[40px] font-bold text-black font-serif ">
             ACES
           </h1>
-        </div>
-
-      
+        </div>   
   <div className="relative">
     <img src={images} alt="men" className="w-full md:h-full object-cover" />
     <a href="/womens">
