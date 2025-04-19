@@ -221,19 +221,7 @@ const cards = [
 ];
 
 export default function WomenShoppingPage() {
-  const [open, setOpen] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
   const navigate = useNavigate();
-
-  const handleOpen = (product) => {
-    setSelectedProduct(product);
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    setSelectedProduct(null);
-  };
 
   return (
     <section className="relative top-[32px] mb-[70px]">
@@ -267,7 +255,6 @@ export default function WomenShoppingPage() {
                   >
                     SELLING FAST
                   </button>
-                  
                 </div>
               </div>
             </div>
@@ -276,38 +263,6 @@ export default function WomenShoppingPage() {
           <p className="text-center col-span-full">No products found.</p>
         )}
       </div>
-
-      {/* MODAL */}
-      {open && selectedProduct && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
-          <div className="bg-white p-6 rounded-md shadow-xl w-11/12 md:w-[500px]">
-            <h2 className="text-center text-xl font-bold mb-4">Confirm Purchase</h2>
-            <div className="grid grid-cols-2 gap-4">
-              <img
-                src={selectedProduct.image}
-                alt={selectedProduct.name}
-                className="w-full h-auto object-cover"
-              />
-              <div>
-                <p className="font-semibold text-lg mb-2">{selectedProduct.name}</p>
-                <p className="text-gray-600 mb-2">This is a sample product description.</p>
-                <p className="text-sm font-bold">{selectedProduct.price}</p>
-              </div>
-            </div>
-            <div className="flex justify-end mt-6">
-              <button
-                onClick={handleClose}
-                className="mr-2 border border-gray-400 px-4 py-2 rounded hover:bg-gray-100 transition"
-              >
-                Cancel
-              </button>
-              <button className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">
-                Make Payment
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
