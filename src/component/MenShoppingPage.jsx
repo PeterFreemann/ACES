@@ -270,7 +270,9 @@ export default function MenShoppingPage() {
                 <div className="flex justify-between mt-2 mb-4">
                   <button
                     className="btn bg-gray-700 px-2 py-1 text-xs text-white font-semibold"
-                    onClick={() => handleOpen(product)} // 🔥 corrected usage
+                    onClick={() =>
+                      navigate("/mensproduct-details", { state: { product } })
+                    }
                   >
                     SELLING FAST
                   </button>
@@ -284,40 +286,7 @@ export default function MenShoppingPage() {
       </div>
 
       {/* Modal */}
-      {open && selectedProduct && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
-          <div className="w-96 rounded-lg bg-white p-6 shadow-lg">
-            <h2 className="mb-4 text-center text-xl font-bold">
-              Confirm Purchase
-            </h2>
-            <div className="grid grid-cols-2 gap-3">
-              <img
-                src={selectedProduct.image}
-                alt={selectedProduct.name}
-                className="w-full h-auto"
-              />
-              <div>
-                <p className="text-lg font-semibold">{selectedProduct.name}</p>
-                <p className="text-gray-600">Product Description</p>
-              </div>
-            </div>
-            <div className="mt-4 flex justify-end">
-              <button
-                className="btn btn-outline-secondary mr-2 px-4 py-2"
-                onClick={handleClose}
-              >
-                Cancel
-              </button>
-              <button
-                className="btn btn-primary px-4 py-2"
-                onClick={handleConfirmPurchase}
-              >
-                Make Payment
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      
     </section>
   );
 }
