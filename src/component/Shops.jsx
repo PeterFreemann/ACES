@@ -18,7 +18,7 @@ export default function Shops() {
   
   
 </div>
-<button className="text-5xl py-10 font-bold text-gray-600 font-serif">Shop men's brands</button>
+<button className="text-5xl py-10 font-bold text-gray-600 font-serif px-5">Shop men's brands</button>
 
       </div>
     </section>
