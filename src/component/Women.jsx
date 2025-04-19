@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
+
 import Videoo from "../images/videoo.mp4";
 import Videooo from "../images/videooo.mp4";
 import Women from '../images/women.jpg';
@@ -23,64 +25,57 @@ export default function Womens() {
       </div>
 
       {/* Videos Section */}
-      <div className=" gap-2">
-      <a href='/womenshopping' > 
-        <video
-          ref={videoRef}
-          src={Videoo}
-          controls
-          autoPlay
-          loop
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
-          className="w-full h-[600px] object-cover mt-[1px]"
-        ></video>
-        </a>
+      <div className="gap-2">
+        <Link to="/womenshopping">
+          <video
+            ref={videoRef}
+            src={Videoo}
+            controls
+            autoPlay
+            loop
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+            className="w-full h-[600px] object-cover mt-[1px]"
+          ></video>
+        </Link>
 
-        <a href='/womenshopping'>
-
-        <video
-          src={Videooo}
-          controls
-          autoPlay
-          loop
-          className="w-full h-[600px] object-cover mt-10"
-        ></video>
-        </a>
+        <Link to="/womenshopping">
+          <video
+            src={Videooo}
+            controls
+            autoPlay
+            loop
+            className="w-full h-[600px] object-cover mt-10"
+          ></video>
+        </Link>
       </div>
 
       {/* Images Section */}
       <div className="grid md:grid-cols-3 mt-10 gap-1">
-        <div className="">
-        <a href='/womenshopping' > 
-            <img src={Women} alt="" className="h-[600px]" />
-            </a>
-        </div>
-        <div>
-        <a href='/womenshopping' > 
-        <img src={Womenss} alt="" className="h-[600px]" />
-        </a>
-        </div>
-        <div>
-        <a href='/womenshopping' > 
-        <img src={Womensss} alt="" className="h-[600px]" />
-        </a>
-        </div>
-
+        {[Women, Womenss, Womensss].map((img, idx) => (
+          <div key={idx}>
+            <Link to="/womenshopping">
+              <img src={img} alt="" className="h-[600px]" />
+            </Link>
+          </div>
+        ))}
       </div>
-      <div className="py-8 bg-white font-bold text-2xl font-serif ">
+
+      <div className="py-8 bg-white font-bold text-2xl font-serif">
         DENIM FITS
-
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-6 gap-1  md:h-[300px] h-[600px] max-sm:mb-6">
-    {[Photo, Photoo, Photooo, Photoooo, Photooooo, Photoooooo].map((imgSrc, index) => (
-        <div key={index} className="h-48 w-full flex items-center justify-center">
-          <a href='/womenshopping' className="h-48 w-full flex items-center justify-center">
-            <img src={imgSrc} alt="" className="h-full w-full object-cover" />
-            </a>
-        </div>
-    ))}
-</div>
+
+      <div className="grid grid-cols-2 md:grid-cols-6 gap-1 md:h-[300px] h-[600px] max-sm:mb-6">
+        {[Photo, Photoo, Photooo, Photoooo, Photooooo, Photoooooo].map(
+          (imgSrc, index) => (
+            <div key={index} className="h-48 w-full flex items-center justify-center">
+              <Link to="/womenshopping" className="h-48 w-full flex items-center justify-center">
+                <img src={imgSrc} alt="" className="h-full w-full object-cover" />
+              </Link>
+            </div>
+          )
+        )}
+      </div>
     </section>
   );
 }

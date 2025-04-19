@@ -241,16 +241,16 @@ export default function WomenShoppingPage() {
         THE UP-TO-30%-OFF EDIT
       </div>
       <div className=" py-4 bg-white text-black font-bold font-serif text-center">
-        T-SHIRT Fit
+         Fits
       </div>
       <div className="grid grid-cols-1 gap-2 px-12 sm:grid-cols-2 ">
 
       </div>
-      <div className="grid grid-cols-1 gap-2 px-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+      <div className="grid grid-cols-2 gap-2 md:px-12  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
         {cards.length > 0 ? (
           cards.map((product) => (
             <div key={product.id} className="card product-card-alt gap-2">
-              <div className="product-thumb  h-[386px] w-full">
+              <div className="product-thumb  md:h-[386px] h-[200px]  w-full">
                 <img
                   src={product.image}
                   alt={product.name}
