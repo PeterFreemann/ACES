@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
 import Videoo from "../images/videoo.mp4";
@@ -15,7 +15,6 @@ import Photoooooo from '../images/photoooooo.jpg';
 
 export default function Womens() {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(true);
 
   return (
     <section className="relative top-[5px]">
@@ -33,8 +32,6 @@ export default function Womens() {
             controls
             autoPlay
             loop
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
             className="w-full h-[600px] object-cover mt-[1px]"
           ></video>
         </Link>
@@ -55,7 +52,7 @@ export default function Womens() {
         {[Women, Womenss, Womensss].map((img, idx) => (
           <div key={idx}>
             <Link to="/womenshopping">
-              <img src={img} alt="" className="h-[600px]" />
+              <img src={img} alt={`Women ${idx}`} className="h-[600px]" />
             </Link>
           </div>
         ))}
@@ -70,7 +67,7 @@ export default function Womens() {
           (imgSrc, index) => (
             <div key={index} className="h-48 w-full flex items-center justify-center">
               <Link to="/womenshopping" className="h-48 w-full flex items-center justify-center">
-                <img src={imgSrc} alt="" className="h-full w-full object-cover" />
+                <img src={imgSrc} alt={`Denim ${index}`} className="h-full w-full object-cover" />
               </Link>
             </div>
           )

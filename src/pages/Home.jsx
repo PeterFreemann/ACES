@@ -4,7 +4,7 @@ import Hero from '../component/Hero';
 import Advert from '../component/Advert';
 import Label from '../component/Labels';
 import Shops from '../component/Shops';
-import Footer from '../component/Footer';
+
 
 const Home = () => {
     return (
@@ -14,6 +14,7 @@ const Home = () => {
                   <Advert/>
                   <Label/>
                   <Shops/>
+                  
                   
         </div>
     );
