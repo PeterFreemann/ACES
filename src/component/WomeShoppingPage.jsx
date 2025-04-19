@@ -243,8 +243,8 @@ export default function WomenShoppingPage() {
                 />
               </div>
               <div className="p-3">
-                <h3 className="text-sm mb-2 font-serif">{product.name}</h3>
-                <p className="text-gray-700 font-semibold text-sm">{product.price}</p>
+                <h3 className="text-sm mb-2 font-serif text-left">{product.name}</h3>
+                <p className="text-gray-700 font-semibold text-sm text-left">{product.price}</p>
                 <div className="flex justify-between mt-3">
                   <button
                     className="btn bg-gray-700 px-2 py-1 text-xs text-white font-semibold"
