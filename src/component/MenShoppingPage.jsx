@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 
 const cards = [
   {
@@ -61,217 +59,41 @@ const cards = [
     id: 10,
     name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
     price: "$2000",
-    image: "/images/images.jpg",
-  },
-  {
-    id: 11,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagess.jpg",
-  },
-  {
-    id: 12,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesss.jpg",
-  },
-  {
-    id: 13,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagessss.jpg",
-  },
-  {
-    id: 14,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesssss.jpg",
-  },
-  {
-    id: 15,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagessssss.jpg",
-  },
-  {
-    id: 16,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesssssss.jpg",
-  },
-  {
-    id: 17,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagessssssss.jpg",
-  },
-  {
-    id: 18,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesssssssss.jpg",
-  },
-  {
-    id: 19,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagessssssssss.jpg",
-  },
-  {
-    id: 20,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesssssssssss.jpg",
-  },
-  {
-    id: 21,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagessssssssssss.jpg",
-  },
-  {
-    id: 22,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesssssssssssss.jpg",
-  },
-  {
-    id: 23,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagessssssssssssss.jpg",
-  },
-  {
-    id: 24,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesssssssssssssss.jpg",
-  },
-  {
-    id: 25,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagessssssssssssssss.jpg",
-  },
-  {
-    id: 26,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesssssssssssssssss.jpg",
-  },
-  {
-    id: 27,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagessssssssssssssssss.jpg",
-  },
-  {
-    id: 28,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagessssssssssssssssss.jpg",
-  },
-  {
-    id: 29,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesssssssssssssssssss.jpg",
-  },
-  {
-    id: 30,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesaaaaaaaa.jpg",
-  },
-  {
-    id: 31,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesaaaaaaa.jpg",
-  },
-  {
-    id: 32,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesaaaaaa.jpg",
-  },
-  {
-    id: 33,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesaaaaa.jpg",
-  },
-  {
-    id: 34,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesa.jpg",
-  },
-  {
-    id: 35,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesaa.jpg",
-  },
-  {
-    id: 36,
-    name: "ACES DESIGN oversized striped t-shirt with sports graphic in black",
-    price: "$2000",
-    image: "/images/imagesaaa.jpg",
+    image: "/images/imageeeeeeeeeee.jpg",
   },
 ];
 
 export default function MenShoppingPage() {
-  const [open, setOpen] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
   const navigate = useNavigate();
 
-  const handleOpen = (product) => {
-    setSelectedProduct(product);
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    setSelectedProduct(null);
-  };
-
-  const handleConfirmPurchase = () => {
-    navigate("/menproduct-details", { state: { product: selectedProduct } });
-  };
-
   return (
-    <section className="relative top-[32px] mb-[40px]">
+    <section className="relative top-[32px] mb-[70px]">
       <div className="mt-12 py-4 bg-black text-white font-bold font-serif text-center">
-        THE UP-TO-30%-OFF EDIT
+        THE MEN'S DROP
       </div>
-      <div className="py-6 bg-white text-black font-bold font-serif text-center text-2xl">
-        New season T-Shirt fit
+      <div className="py-4 bg-white text-black font-bold font-serif text-center">
+        Men’s Fits
       </div>
 
-      <div className="grid grid-cols-1 gap-2 px-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-2 px-4 sm:px-12 md:grid-cols-3 lg:grid-cols-4">
         {cards.length > 0 ? (
           cards.map((product) => (
-            <div key={product.id} className="card product-card-alt gap-2">
-              <div className="product-thumb h-[386px] w-full">
+            <div key={product.id} className="border shadow rounded-md overflow-hidden">
+              <div className="h-[200px] md:h-[386px] w-full">
                 <img
                   src={product.image}
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="card-body">
-                <h3 className="product-title text-sm mb-2 mt-3 text-left">
-                  {product.name}
-                </h3>
-                <p className="text-gray-700 text-left font-semibold text-sm">
-                  {product.price}
-                </p>
-                <div className="flex justify-between mt-2 mb-4">
+              <div className="p-3">
+                <h3 className="text-sm mb-2 font-serif text-left">{product.name}</h3>
+                <p className="text-gray-700 font-semibold text-sm text-left">{product.price}</p>
+                <div className="flex justify-between mt-3">
                   <button
                     className="btn bg-gray-700 px-2 py-1 text-xs text-white font-semibold"
                     onClick={() =>
-                      navigate("/mensproduct-details", { state: { product } })
+                      navigate("/product-details", { state: { product } })
                     }
                   >
                     SELLING FAST
@@ -281,12 +103,9 @@ export default function MenShoppingPage() {
             </div>
           ))
         ) : (
-          <p>No products found.</p>
+          <p className="text-center col-span-full">No products found.</p>
         )}
       </div>
-
-      {/* Modal */}
-      
     </section>
   );
 }
