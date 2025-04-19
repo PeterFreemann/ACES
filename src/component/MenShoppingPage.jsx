@@ -236,19 +236,24 @@ export default function MenShoppingPage() {
     setSelectedProduct(null);
   };
 
+  const handleConfirmPurchase = () => {
+    navigate("/menproduct-details", { state: { product: selectedProduct } });
+  };
+
   return (
     <section className="relative top-[32px] mb-[40px]">
-        <div className="mt-12 py-4 bg-black text-white font-bold font-serif text-center">
+      <div className="mt-12 py-4 bg-black text-white font-bold font-serif text-center">
         THE UP-TO-30%-OFF EDIT
       </div>
-      <div className=" py-6 bg-white text-black font-bold font-serif text-center text-2xl">
+      <div className="py-6 bg-white text-black font-bold font-serif text-center text-2xl">
         New season T-Shirt fit
       </div>
+
       <div className="grid grid-cols-1 gap-2 px-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {cards.length > 0 ? (
           cards.map((product) => (
             <div key={product.id} className="card product-card-alt gap-2">
-              <div className="product-thumb  h-[386px] w-full">
+              <div className="product-thumb h-[386px] w-full">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -256,21 +261,19 @@ export default function MenShoppingPage() {
                 />
               </div>
               <div className="card-body">
-                <h3 className="product-title text-sm  mb-2 mt-3 text-left">
+                <h3 className="product-title text-sm mb-2 mt-3 text-left">
                   {product.name}
                 </h3>
-                <p className="text-gray-700 text-left font-semibold text-sm">{product.price}</p>
+                <p className="text-gray-700 text-left font-semibold text-sm">
+                  {product.price}
+                </p>
                 <div className="flex justify-between mt-2 mb-4">
                   <button
                     className="btn bg-gray-700 px-2 py-1 text-xs text-white font-semibold"
-                    onClick={() =>
-                        navigate("/menproduct-details", { state: { product } })
-                      }
-                  
+                    onClick={() => handleOpen(product)} // 🔥 corrected usage
                   >
                     SELLING FAST
                   </button>
-                 
                 </div>
               </div>
             </div>
@@ -280,9 +283,9 @@ export default function MenShoppingPage() {
         )}
       </div>
 
-      {/* MODAL */}
+      {/* Modal */}
       {open && selectedProduct && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
           <div className="w-96 rounded-lg bg-white p-6 shadow-lg">
             <h2 className="mb-4 text-center text-xl font-bold">
               Confirm Purchase
@@ -305,7 +308,10 @@ export default function MenShoppingPage() {
               >
                 Cancel
               </button>
-              <button className="btn btn-primary px-4 py-2">
+              <button
+                className="btn btn-primary px-4 py-2"
+                onClick={handleConfirmPurchase}
+              >
                 Make Payment
               </button>
             </div>
