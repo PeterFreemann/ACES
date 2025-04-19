@@ -93,7 +93,7 @@ export default function MenShoppingPage() {
                   <button
                     className="btn bg-gray-700 px-2 py-1 text-xs text-white font-semibold"
                     onClick={() =>
-                      navigate("/product-details", { state: { product } })
+                      navigate("/menproduct-details", { state: { product } })
                     }
                   >
                     SELLING FAST
